@@ -21,8 +21,7 @@ function SignUp() {
             if(session){
                 
                 const userData = await authService.getUser();
-                console.log(userData);
-                if(userData)useDispatch(authLogin(userData));
+                if(userData)dispatch(authLogin(userData));
                 navigate('/')
             }
         } catch (error) {
@@ -49,7 +48,7 @@ function SignUp() {
                         Login
                     </Link>
         </p>
-        {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
+        {error && <p className="text-red-600 mt-8 text-center">{error}{console.log(error)}</p>}
         <form onSubmit={handleSubmit(signUp)} className='mt-8'>
             <div className='space-y-5'>
                 <Input
