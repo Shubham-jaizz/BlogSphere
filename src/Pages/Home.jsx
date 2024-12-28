@@ -2,11 +2,14 @@ import React, {useEffect, useState} from 'react'
 import appwriteService from "../appwrite/configure";
 import {Container, PostCard} from '../../components/index'
 
+
 function Home() {
     const [posts, setPosts] = useState([])
+    
 
     useEffect(() => {
         appwriteService.listPost().then((posts) => {
+            
             if (posts) {
                 setPosts(posts.documents)
             }

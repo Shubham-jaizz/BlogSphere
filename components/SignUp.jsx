@@ -16,7 +16,7 @@ function SignUp() {
         setError('');
         try {
             const session = await authService.createAccount(data);
-            console.log(session);
+
 
             if(session){
                 
